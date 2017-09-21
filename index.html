@@ -1,0 +1,23 @@
+---
+layout: default
+title: home
+---
+
+<article class="row">
+  <section class="small-12 large-8 columns page-content">
+
+<h1>Welcome!</h1>
+
+{% for post in site.posts limit:1 %}
+
+<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+<!--
+<p class="post-meta">{{ post.date | date: "%d %B %Y" }}</p>
+-->
+<div>{{ post.content }}</div>
+{% endfor %}
+
+  </section>
+  
+    {% include asides/recent_posts.html %}
+</article>

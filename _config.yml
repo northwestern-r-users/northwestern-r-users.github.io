@@ -1,0 +1,60 @@
+# Site settings
+name: Northwestern R User Group
+email: christina.maimone@northwestern.edu
+author: Christina Maimone
+
+keywords: Northwestern, R, R User Group
+description: Northwestern University R User Group
+
+future: true
+
+# Only use this if you are serving your site via Github Pages
+github:
+  url: "https://northwestern-r-users.github.io/"
+
+header: yes
+header_sm: images/banner-small.jpg
+header_med: images/banner-med.jpg
+header_large: images/banner-large.jpg
+header_xl: images/banner-xl.jpg
+
+
+# Exclude our ruby stuff
+exclude: [.bundle, bin, vendor, Gemfile, Gemfile.lock, Rakefile, .last_optimized, themeinfo]
+
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+
+destination: _site
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: atom.xml
+  
+# Compress our Css
+#sass:
+#    style: :compressed
+
+permalink: /posts/:year/:title
+
+#### SEO Stuff
+# Google Analytics
+google_universal_analytics: 
+google_universal_analytics_cookiedomain: auto
+
+# Facebook Opengraph
+facebook_user:
+facebook_app_id:                      #enter your App ID
+facebook_locale: en_US
+facebook_page:                        #the URL of your Facebook Page
+facebook_image:                       #enter a default image (at least 200x200px) to use here for posts/pages that don't have one.
+
+# Twitter Cards
+twitter_user: 
+twitter_card: true
+twitter_image:                        #enter a default image (at least 200x200px) to use here for posts/pages that don't have one.

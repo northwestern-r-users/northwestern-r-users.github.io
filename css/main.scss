@@ -1,0 +1,55 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+
+@charset "utf-8";
+
+// Variables
+@import "variables";
+
+// change variable values here
+
+
+$link-color: #401F68;
+$link-hover-color: #836EAA;
+$link-visited-color: #401F68;
+
+$primary-color: #342F2E;
+$secondary-color: #E4E0EE;
+$complimentary-color: #fff;
+
+$navbar-color: $primary-color;
+$navbar-text-color: $secondary-color;
+$navbar-hover-color: $complimentary-color;
+$navbar-active-color: darken($complimentary-color, 75%);
+
+$footer-height: 0px;
+
+
+// Navigation Menu
+@import "navigation";
+
+
+// Icomoon Font Icons
+@import "icomoon/base";
+
+// Core Layout
+@import "base";
+@import "layout";
+
+// Utility Classes
+@import "utility";
+
+// Zurb Foundation Stuff
+@import "foundation/foundation";
+
+
+// Misc.
+
+
+
+
+
+
+
