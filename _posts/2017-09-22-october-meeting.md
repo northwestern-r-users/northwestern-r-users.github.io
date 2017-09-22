@@ -14,10 +14,10 @@ At the end of the meeting we'll have time for members to ask each other for help
 
 ### Meeting Agenda
 
-* Introduction to the group: what is this group about; member introductions to the group
-* Presentation: RMarkdown 
-* Discussion: group logistics and future scheduling
-* Mini Work Session: ask for help and help others
+* Introduction to the group (10-15 minutes): what is this group about; member introductions to the group
+* Presentation (45 minutes): RMarkdown 
+* Discussion (20-30 minutes): group logistics and future scheduling
+* Mini Work Session: ask for help and help others, practice using RMarkdown
 
 ### RSVP
 
