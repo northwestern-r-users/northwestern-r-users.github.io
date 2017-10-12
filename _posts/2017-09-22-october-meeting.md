@@ -8,16 +8,16 @@ date: 2017-09-22
 
 **18 October 2017, 3-5pm, Evanston Campus, Mudd Hall Room 2210**
 
-This is our first meeting!  We'll get to know each other and decide as a group on future group logistics and meeting format.  Christina Maimone, from Research Computing, will be giving a presentation on RMarkdown &mdash; feature tour, how to do the basics, why you'd want to use it.
+This is our first meeting!  We'll get to know each other and decide as a group on future group logistics and meeting format.  Christina Maimone, from Research Computing, will be giving a presentation on R Markdown &mdash; feature tour, how to do the basics, why you'd want to use it.
 
 At the end of the meeting we'll have time for members to ask each other for help, or to play around with RMarkdown.  So bring your laptop!
 
 ### Meeting Agenda
 
 * Introduction to the group (10-15 minutes): what is this group about; member introductions to the group
-* Presentation (45 minutes): RMarkdown 
+* Presentation (45 minutes): R Markdown 
 * Discussion (20-30 minutes): group logistics and future scheduling
-* Mini Work Session: ask for help and help others, practice using RMarkdown
+* Mini Work Session: ask for help and help others, practice using R Markdown
 
 ### RSVP
 
