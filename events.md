@@ -6,10 +6,10 @@ title: Events
 # Upcoming Events
 
 * February Meeting: Wednesday 28 February 2018, 3:30pm, Evanston Campus, Mudd Hall R0om 2210
-	* Collin Erickson will be showing us how to time and profile our code
-	* Christina Maimone will be sharing ideas and tips from the RStudio conference
+    * Collin Erickson will be showing us how to time and profile our code
+    * Christina Maimone will be sharing ideas and tips from the RStudio conference
 * March Meeting: Tuesday 27 March 2018, 3:30pm, Evanston Campus, Mudd Hall Room 2210
-	* Richard Morel will be talking about network analysis in R
+    * Richard Morel will be talking about network analysis in R
 
 
 
