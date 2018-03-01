@@ -1,0 +1,380 @@
+---
+title: "Ever wonder why your R code is running slow?"
+author: "Collin Erickson"
+date: "February 28, 2018"
+output: ioslides_presentation
+# output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Using R interactively vs scripting
+
++ Most users run interactively in console
+
++ R scripts can be run as batch jobs
+
++ Run in background or on cluster
+
++ Useful when repeatedly running same code
+
+## Why time?
+
+* We've seen in previous meetings similar functions have different run times (`read.csv` vs `readr::read_csv`)
+
+* If you do exploratory data analysis in the console, this isn't a big issue
+
+* If you run the same code every day and it takes an hour, you may be able to save a lot of time
+
+* Show it is competitive with other methods
+
+## `microbenchmark` package
+
+* Quickly compare code run times with high accuracy
+
+* Arguments are expressions (Use {} for multi-line)
+
+```{r}
+library(microbenchmark)
+# Calculate square root of 10,000 numbers
+n <- 1e4
+x <- runif(n)
+microbenchmark(
+  sqrt(x),
+  x^0.5
+)
+```
+
+## Cool plots, too
+
+```{r}
+ggplot2::autoplot(microbenchmark(sqrt(x), x^0.5))
+```
+
+## Are `for` loops slow?
+
+```{r}
+microbenchmark(sqrt = {t1 <- sqrt(x)},
+               sapply = {t2 <-  sapply(x, sqrt)},
+               forloop = {t3 <- numeric(n);
+                 for (i in 1:length(x)) {
+                   t3[i] <- sqrt(x[i])
+                 }
+               }
+)
+```
+
+## Are `for` loops slow?
+
+* Not necessarily compared to `sapply`
+
+* You should probably use `sapply` for clarity in most cases
+
+* Always use vectorized functions when available
+
+* Always preallocate memory when using `for` loops
+    + i.e., don't append each iteration
+
+
+## Are `for` loops slow?
+
+```{r, echo=FALSE}
+microbenchmark(sqrt={t1 <- sqrt(x)},
+               sapply={t2 <-  sapply(x, sqrt)},
+               forloop = {t3 <- numeric(n);
+                 for (i in 1:length(x)) {
+                   t3[i] <- sqrt(x[i])
+                 }
+               },
+               badforloop = {t4 <- numeric(0);
+                 for (i in 1:length(x)) {
+                   t4[i] <- sqrt(x[i])
+                 }
+               },
+               badforloop2 = {t4 <- numeric(0);
+                 for (i in 1:length(x)) {
+                   t4 <- c(t4, sqrt(x[i]))
+                 }
+               }, times=10
+)
+```
+
+
+## Example of aggregating data [(Source)](https://trinkerrstuff.wordpress.com/2012/04/28/microbenchmarking-with/)
+
+```{r}
+library(plyr)
+op <- microbenchmark(
+        PLYR=ddply(mtcars, .(cyl, gear), summarise, 
+          output = mean(hp)),
+        AGGR=aggregate(hp ~ cyl + gear, mtcars, mean),
+        TAPPLY = tapply(mtcars$hp, interaction(mtcars$cyl, 
+          mtcars$gear), mean),
+      times=1000L)
+print(op)
+```
+
+## Example of aggregating data
+
+```{r}
+ggplot2::autoplot(op)
+```
+
+
+## Summary of `microbenchmark`
+
+* Quickly compare run times of code
+
+* Precise timing
+
+* Doesn't tell you why your code is slow
+
+## `profvis`
+
+* Shows how long is spent in each part of code
+
+* Top section shows how long each line takes
+
+* Bottom section shows where it is over the course of time
+
+* The total time is given in bottom right corner
+
+## `profvis` example [(source)](https://rstudio.github.io/profvis/)
+
+```{r, fig.height=3, fig.width=4}
+library(profvis)
+pv <- profvis({
+  data(diamonds, package = "ggplot2")
+  plot(price ~ carat, data = diamonds)
+  m <- lm(price ~ carat, data = diamonds)
+  abline(m, col = "red")
+})
+```
+
+## `profvis` example
+
+```{r, echo=FALSE}
+pv
+```
+
+<!-- ## `profvis` of `neuralnet` [(source)](https://www.analyticsvidhya.com/blog/2017/09/creating-visualizing-neural-network-in-r/) -->
+
+<!-- ```{r, size=2} -->
+<!-- pvnn <- profvis::profvis({ -->
+<!--   # Read the Data -->
+<!--   data = read.csv("http://lib.stat.cmu.edu/DASL/Datafiles/Cereals.html", header=T, skip = 41, sep = '\t', row.names = 1, nrows=77) -->
+<!--   head(data) -->
+<!--   data$mfr <- NULL -->
+<!--   data$type <- NULL -->
+
+<!--   # Random sampling -->
+<!--   samplesize = 0.60 * nrow(data) -->
+<!--   set.seed(80) -->
+<!--   index = sample( seq_len ( nrow ( data ) ), size = samplesize ) -->
+
+<!--   # Create training and test set -->
+<!--   datatrain = data[ index, ] -->
+<!--   datatest = data[ -index, ] -->
+
+<!--   ## Scale data for neural network -->
+<!--   dmax = apply(data , 2 , max) -->
+<!--   dmin = apply(data, 2 , min) -->
+<!--   scaled = as.data.frame(scale(data, center = dmin, scale = dmax - dmin)) -->
+
+<!--   ## Fit neural network -->
+<!--   # load library -->
+<!--   library(neuralnet) -->
+
+<!--   # creating training and test set -->
+<!--   trainNN = scaled[index , ] -->
+<!--   testNN = scaled[-index , ] -->
+
+<!--   # fit neural network -->
+<!--   set.seed(2) -->
+<!--   NN = neuralnet(rating ~ calories + protein + fat + sodium + fiber, trainNN, hidden = 3 , linear.output = T ) -->
+
+<!--   # plot neural network -->
+<!--   plot(NN) -->
+<!-- }) -->
+<!-- ``` -->
+
+
+<!-- ## `profvis` of `neuralnet` -->
+
+<!-- ```{r} -->
+<!-- pvnn -->
+<!-- ``` -->
+
+
+<!-- ## NNet 2 -->
+<!-- ```{r} -->
+
+<!-- library(neuralnet) -->
+
+<!-- n <- 1e2 -->
+<!-- df <- data.frame(a = rnorm(n), -->
+<!--                  b = runif(n), -->
+<!--                  c = rexp(n), -->
+<!--                  d = rnorm(n)) -->
+<!-- df$z <- df$a * df$b + df$d -->
+<!-- training_indices <- sample(1:n, floor(.7*n)) -->
+<!-- df_train <- df[training_indices, ] -->
+<!-- df_test <- df[-training_indices, ] -->
+
+<!-- # fit neural network -->
+<!-- set.seed(2) -->
+<!-- NN = neuralnet(z ~ a + b + c + d, df_train, hidden = 3 , linear.output = T ) -->
+
+<!-- plot(NN) -->
+<!-- ``` -->
+
+## `profvis` of [Adam's code](http://rpubs.com/angoodkind/352340) from last meeting
+
+```{r}
+pv_adam <- profvis::profvis({
+  # install.packages(c("tidyverse", "magrittr"))
+  library(tidyverse)
+  # data()
+  starwars
+  print(starwars)
+  # str(starwars)
+  head(starwars)
+  sum(1:8) %>%
+    sqrt()
+  starwars %>% filter(height < 90)
+  starwars %>%
+    filter(height < 90) %>%
+    select(name, gender, species, height)
+  starwars %>% filter(eye_color == "red") %>% select(name)
+  filter(starwars, height < 90) %>%
+    select(name, gender, species, height) %>%
+    arrange(height)
+  starwars %>% arrange(name)
+  starwars %>%
+    na.omit() %>%
+    group_by(species) %>%
+    summarize(avg_mass = mean(mass))
+  starwars %>%
+    na.omit() %>%
+    group_by(species, gender) %>%
+    select(name, gender, species, mass) %>%
+    mutate(avg_mass = mean(mass))
+  starwars %>%
+    mutate(height_plus_mass = height + mass) %>%
+    select(name, height, mass, height_plus_mass)
+  nums <- c(0.7, 1.2, 3.4)
+  factor_nums <- as.factor(nums)
+  levels(factor_nums)
+  nums+1
+  factor_nums+1
+  # Base R
+  plot(starwars$height, type='p', col='red', pch=16)
+  ggplot(data=starwars, aes(x=height, y=mass)) + geom_point() + geom_boxplot()
+  ggplot(starwars, aes(x=height, y=mass)) + 
+    geom_point(aes(color=gender), size=5) 
+  ggplot(subset(starwars, species %in% c('Droid', 'Human', "Gungan")),
+         aes(x=species, y=height)) + 
+    geom_boxplot()
+  ggplot(starwars, aes(x=height, y=mass)) + 
+    geom_point(size=5) +
+    stat_smooth(method='lm')
+  starwars %>%
+    filter(species == 'Human' & gender %in% c('male', 'female')) %>%
+    ggplot(aes(mass)) +
+    geom_histogram() +
+    facet_grid(. ~ gender)
+  starwars %>%
+    filter(homeworld %in% c("Naboo", "Tatooine")) %>%
+    ggplot(aes(species)) +
+    geom_bar() +
+    facet_grid(. ~ homeworld)
+})
+```
+
+
+
+
+## `profvis` of [Adam's code](http://rpubs.com/angoodkind/352340) from January
+
+```{r, echo=F}
+pv_adam
+```
+
+
+
+## Beware: premature optimization
+
+* "Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: **premature optimization is the root of all evil**. Yet we should not pass up our opportunities in that critical 3%." - Don Knuth
+
+* Don't spend hours to save minutes
+
+## How to speed up your code
+
+* Vectorize and preallocate
+
+* Find faster functions, e.g. `readr::read_csv` instead of `read.csv`
+
+* Store data instead of recreating
+
+* Reformulate to reduce time in slow parts
+
+* Convert slow parts to C++ code with Rcpp
+
+* Parallelize
+
+## Examples where `profvis` helped me
+
+* Slow matrix multiplication when I only needed diagonal
+
+    - `diag(A%*%B) = colSums(t(A)*B)`
+
+* Recalculated same matrix thousands of times
+
+    - Reorganize functions to share calculation
+
+<!-- * Slow sequence of matrix multiplications -->
+
+<!--     - Reorder multiplication to be efficient -->
+
+* Slow function that is repeatedly used
+
+    - Write in Rcpp (C++)
+
+## How I use `profvis`
+
+* Occasionally use `profvis` to find bottlenecks
+
+* See if there's a simple fix
+    - e.g., don't calculate full matrix if only need diagonal
+
+* If still bottleneck, use Rcpp
+
+<!-- * Can't do much about matrix multiplications -->
+
+
+## Conclusion
+
+* Use `microbenchmark` to accurately time code
+
+* Use `profvis` to find where code is slow
+
+* Speed up code by using faster functions, writing more efficient code
+
+* Don't waste time trying to speed up code
+
+
+## Sources
+
+- https://www.r-bloggers.com/using-the-microbenchmark-package-to-compare-the-execution-time-of-r-expressions/
+
+- https://rstudio.github.io/profvis/
+
+- http://adv-r.had.co.nz/Performance.html#microbenchmarking
+
+- https://trinkerrstuff.wordpress.com/2012/04/28/microbenchmarking-with/
+
+- https://www.analyticsvidhya.com/blog/2017/09/creating-visualizing-neural-network-in-r/
+
+- http://rpubs.com/angoodkind/352340
