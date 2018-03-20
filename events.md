@@ -7,6 +7,8 @@ title: Events
 
 * March Meeting: Tuesday 27 March 2018, 3:30pm, Evanston Campus, Mudd Hall Room 2210
   * Richard Morel will be talking about network analysis in R
+* Thursday, 03 May 2018, 3:30pm, Evanston Campus, Mudd Hall Room 2210
+* Wednesday, 06 June 2018, 3:30pm, Evanston Campus, Mudd Hall Room 2210
 
 
 
