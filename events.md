@@ -6,7 +6,7 @@ title: Events
 # Upcoming Events
 
 * March Meeting: Tuesday 27 March 2018, 3:30pm, Evanston Campus, Mudd Hall Room 2210
-  * Richard Morel will be talking about network analysis in R
+  * Richard Morel will be talking about network analysis in R: Network data present unique challenges for storage, wrangling, visualization, and analysis. R has the most comprehensive set of tools for importing and analyzing network data. In this presentation, we will take a tour of the two most popular packages for network analysis, igraph and statnet. Topics covered will include how to import various forms of network data, how to interact with network objects in R, the advantages and disadvantages of the two packages, and some strategies for visualization and analysis. We will also touch on two newer packages that incorporate network analysis into the “tidyverse”: tidygraph and ggraph.
 * Thursday, 03 May 2018, 3:30pm, Evanston Campus, Mudd Hall Room 2210
 * Wednesday, 06 June 2018, 3:30pm, Evanston Campus, Mudd Hall Room 2210
 
