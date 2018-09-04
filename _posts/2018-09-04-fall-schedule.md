@@ -4,7 +4,7 @@ title: "Fall Schedule"
 date: 2018-09-04
 ---
 
-The Northwestern R User Group will resume in late September.  
+The Northwestern R User Group will resume in late September.  We meet monthly during the academic year on the Evanston campus in Mudd Library.  The group welcomes members of the Northwestern community of all experience levels. 
 
 ### September
 - date/time/topic TBD
@@ -22,4 +22,4 @@ The Northwestern R User Group will resume in late September.
 
 ## Get Involved!
 
-If you have ideas for meeting topics or presenters next year (including yourself), or would like to take a leadership role in the group, please contact [Christina Maimone](mailto:christina.maimone@northwestern.edu).
+If you have ideas for meeting topics or presenters (including yourself), or would like to take a leadership role in the group, please contact [Christina Maimone](mailto:christina.maimone@northwestern.edu).
