@@ -7,8 +7,9 @@ date: 2018-09-04
 The Northwestern R User Group will resume in late September.  We meet monthly during the academic year on the Evanston campus in Mudd Library.  The group welcomes members of the Northwestern community of all experience levels. 
 
 ### September
-- date/time/topic TBD
-- Mudd Library
+- Chris Skovron: Tidying up analysis: Modeling and hypothesis testing are the current frontier of development in the tidyverse. In this meeting, I will review tidy workflow practices using broom, infer, and corrr (among others) to tidy the data analysis stage of workflows. 
+- September 27, 3:30 pm
+- Mudd Library, Large Classroom 2210
 
 ### October
 - William Revelle: psych package
