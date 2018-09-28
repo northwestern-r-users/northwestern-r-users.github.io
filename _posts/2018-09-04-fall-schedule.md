@@ -9,7 +9,7 @@ The Northwestern R User Group meets most months during the academic year on the 
 ### September
 - Chris Skovron: Tidying up analysis: Modeling and hypothesis testing are the current frontier of development in the tidyverse. In this meeting, I will review tidy workflow practices using broom, infer, and corrr (among others) to tidy the data analysis stage of workflows. 
 - September 27, 3:30 pm
-- Materials: https://github.com/cskovron/tidy-analysis
+- Materials: [https://github.com/cskovron/tidy-analysis](https://github.com/cskovron/tidy-analysis)
 
 ### October
 - William Revelle: psych package
