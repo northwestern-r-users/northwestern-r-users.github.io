@@ -13,13 +13,13 @@ The Northwestern R User Group meets most months during the academic year on the 
 
 ### October
 - William Revelle: psych package
-- October 25, 3:30pm
+- Thursday, October 25, 3:30pm
 - Mudd Library Large Classroom 2210
 
 ### November
 - Caitlyn McColeman: Empirical studies of data visualization and creating "cognitively ergonomic" data visualizations with ggplot2
-- date TBD, 3:30pm
-- Mudd Library
+- Wednesday, November 28, 3:30pm
+- Mudd Library Large Classroom 2210
 
 ## Get Involved!
 
