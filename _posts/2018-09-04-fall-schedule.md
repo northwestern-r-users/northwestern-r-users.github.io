@@ -17,7 +17,7 @@ The Northwestern R User Group meets most months during the academic year on the 
 - Mudd Library Large Classroom 2210
 
 ### November
-- Caitlyn McColeman: Empirical studies of data visualization and creating "cognitively ergonomic" data visualizations with ggplot2
+- Caitlyn McColeman, Cindy Xiong: Empirical studies of data visualization and creating "cognitively ergonomic" data visualizations with ggplot2
 - Wednesday, November 28, 3:30pm
 - Mudd Library Large Classroom 2210
 
