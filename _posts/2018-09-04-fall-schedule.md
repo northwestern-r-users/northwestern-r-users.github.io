@@ -15,6 +15,7 @@ The Northwestern R User Group meets most months during the academic year on the 
 - William Revelle: psych package
 - Thursday, October 25, 3:30pm
 - Mudd Library Large Classroom 2210
+- [psych package documentation and tutorials](http://personality-project.org/r/psych/) 
 
 ### November
 - Caitlyn McColeman, Cindy Xiong: Empirical studies of data visualization and creating "cognitively ergonomic" data visualizations with ggplot2
