@@ -18,8 +18,8 @@ The Northwestern R User Group meets most months during the academic year on the 
 - [psych package documentation and tutorials](http://personality-project.org/r/psych/) 
 
 ### November
-- Caitlyn McColeman, Cindy Xiong: Empirical studies of data visualization and creating "cognitively ergonomic" data visualizations with ggplot2
-- Wednesday, November 28, 3:30pm
+- Caitlyn McColeman and Cindy Xiong: Empirical studies of data visualization and creating "cognitively ergonomic" data visualizations with ggplot2
+- Wednesday, November 28, **4:15pm**
 - Mudd Library Large Classroom 2210
 
 ## Get Involved!
