@@ -14,12 +14,20 @@ Chris Diaz: **Writing and Publishing with RMarkdown**
 
 RMarkdown is an open source R package that adds R programming features to Markdown, a simple plain-text formatting language. RMarkdown is the basis for tools like Bookdown and Blogdown, static site generators that convert RMarkdown into HTML, PDF, and EPUB for educational, technical, or scholarly websites and blogs. We'll cover the basics of using these packages, install them in an RStudio environment, and discuss free deployment options publishing documents to the web.
 
+Materials: https://gist.github.com/chrisdaaz/1ba8cf670802f7395e43466e4f347672
+
 
 ### February 2019
 
-Topic: Package Tour!  Short presentations on useful packages from multiple members.
+Wednesday, February 13, 2019, 3:30pm, Mudd Library Small Classroom 2124
 
-details tbd
+Topic: Package Tour!  Short presentations on useful packages from multiple members (Jeremy Foote, Jeff Grauzer, others?).
+
+* [pROC](https://cran.r-project.org/web/packages/pROC/index.html)
+* [boot](https://cran.r-project.org/web/packages/boot/index.html)
+* Others TBD
+
+
 
 ### March 2019
 
