@@ -31,7 +31,9 @@ Topic: Package Tour!  Short presentations on useful packages from multiple membe
 
 ### March 2019
 
-details tbd
+Thursday, March 7, 2019, 3:30pm, Mudd Library Small Classroom 2124
+
+Katherine Simeon will be talking about making your own R packages.
 
 
 ## Get Involved!
