@@ -21,11 +21,11 @@ Materials: https://gist.github.com/chrisdaaz/1ba8cf670802f7395e43466e4f347672
 
 Wednesday, February 13, 2019, 3:30pm, Mudd Library Small Classroom 2124
 
-Topic: Package Tour!  Short presentations on useful packages from multiple members (Jeremy Foote, Jeff Grauzer, others?).
+Topic: Package Tour!  Short presentations on useful packages from multiple members 
 
-* [pROC](https://cran.r-project.org/web/packages/pROC/index.html)
-* [boot](https://cran.r-project.org/web/packages/boot/index.html)
-* Others TBD
+* Jeremy Foote: [pROC](https://cran.r-project.org/web/packages/pROC/index.html)
+* Jeff Grauzer: [boot](https://cran.r-project.org/web/packages/boot/index.html)
+* Amy Huntington: [sentimentr](https://github.com/trinker/sentimentr)
 
 
 
