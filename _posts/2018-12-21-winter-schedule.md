@@ -23,8 +23,8 @@ Wednesday, February 13, 2019, 3:30pm, Mudd Library Small Classroom 2124
 
 Topic: Package Tour!  Short presentations on useful packages from multiple members 
 
-* Jeremy Foote: [pROC](https://cran.r-project.org/web/packages/pROC/index.html)
-* Jeff Grauzer: [boot](https://cran.r-project.org/web/packages/boot/index.html)
+* Jeremy Foote: [boot](https://cran.r-project.org/web/packages/boot/index.html)
+* Jeff Grauzer: [pROC](https://cran.r-project.org/web/packages/pROC/index.html)
 * Amy Huntington: [sentimentr](https://github.com/trinker/sentimentr)
 
 
