@@ -35,6 +35,8 @@ Thursday, March 7, 2019, 3:30pm, Mudd Library Small Classroom 2124
 
 Katherine Simeon will be talking about making your own R packages.
 
+Materials: https://github.com/katherinesimeon/make-r-packages
+
 
 ## Get Involved!
 
