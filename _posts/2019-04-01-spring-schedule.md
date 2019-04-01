@@ -6,7 +6,7 @@ date: 2019-04-01
 
 The Northwestern R User Group meets most months during the academic year on the Evanston campus in Mudd Library.  The group welcomes members of the Northwestern community of all experience levels. 
 
-### April 2019
+## April 2019
 
 We're breaking format and having a longer workshop.
 
@@ -17,7 +17,7 @@ Tuesday, April 23, 1-4pm
 Mudd Library, Large Classroom Room 2210
 
 
-### May 2019
+## May 2019
 
 We have a guest speaker!
 
@@ -29,7 +29,7 @@ Kellogg Global Hub, Room 1110
 
 
 
-### Summer
+## Summer
 
 We don't meet monthly over the summer, but there will be R workshops offered on both the Evanston and Chicago campuses.  More details coming in May.
 
