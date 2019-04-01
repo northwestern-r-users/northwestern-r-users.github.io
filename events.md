@@ -5,8 +5,8 @@ title: Events
 
 # Upcoming Events
 
+[Spring 2019 Schedule]({{ site.baseurl }}{% post_url 2019-04-01-spring-schedule %})
 
-[Winter 2019 Schedule]({{ site.baseurl }}{% post_url 2018-12-21-winter-schedule %})
 
 
 # Past Events
@@ -14,6 +14,8 @@ title: Events
 ## 2018-2019
 
 [Fall 2018 Schedule]({{ site.baseurl }}{% post_url 2018-09-04-fall-schedule %})
+[Winter 2019 Schedule]({{ site.baseurl }}{% post_url 2018-12-21-winter-schedule %})
+
 
 ## 2017-2018
 
