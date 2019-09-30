@@ -5,7 +5,7 @@ title: Events
 
 # Upcoming Events
 
-[Fall 2019 Schedule]({{ site.baseurl }}{% post_url 2018-09-30-fall2019 %})
+[Fall 2019 Schedule]({{ site.baseurl }}{% post_url 2019-09-30-fall2019 %})
 
 
 # Past Events
