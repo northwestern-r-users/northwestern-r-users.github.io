@@ -17,3 +17,4 @@ Rakefile
 # shared files unsure can post
 resources/timeseries.R
 resources/trees-180606.pptx
+.Rproj.user
